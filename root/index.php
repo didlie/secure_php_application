@@ -7,17 +7,16 @@ require_once("../interfaces/I_registry.php");
 require_once("../classes/request.php");
 require_once("../classes/regedit.php");
 
-$request = new request();
-//this is a request to this website
+$request = new request();//this is a request to this website
 $request->write_php_ini();
-$request->write_htaccess();
-$request->filter_request();
+$request->write_htaccess();//require https, stop url script injection, keep app views on the front page
+$request->filter_request();//be selective with request variables, delete _FILES that don't belong
 
-//everything in the root needs to be in the registry
+//everything in the root needs to be in the registry, the registry file should not have an extension
 regedit::clean_root();
 
 //back to the request
-$request->application_root();//includes registry details
+$request->application_root();
 $request->start_application();
 $request->exit_application();
 

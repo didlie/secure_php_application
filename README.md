@@ -1,1 +1,1 @@
-"# Secure PHP Application, a framework." 
+# Secure PHP Application, a framework.
