@@ -2,7 +2,7 @@
 
 class request implements I_request{
 
-    private $path = "";
+    private $path = "../";
 
     public function __constructor(){
 
@@ -12,13 +12,13 @@ class request implements I_request{
     //which makes sense
 
     public function write_php_ini(){
-        $php_ini = file_get_contents($path."/readonly/template_php_ini.txt");
-        file_put_contents("php.ini",$ini,LOCK_EX);
+        $php_ini = file_get_contents($this->path."readonly/template_php_ini.txt");
+        file_put_contents("php.ini",$php_ini,LOCK_EX);
     }
 
     public function write_htaccess(){
-        $htaccess = file_get_contents($path."/readonly/template_htaccess.txt");
-        file_put_contents(".htaccess",$htacs,LOCK_EX);
+        $htaccess = file_get_contents($this->path."readonly/template_htaccess.txt");
+        file_put_contents(".htaccess",$htaccess,LOCK_EX);
     }
 
     public function filter_request(){
@@ -35,7 +35,7 @@ class request implements I_request{
     }
 
     public function application_root(){
-        cwd("../app");
+        chdir("../app");
     }
 
     public function start_application(){
@@ -43,7 +43,7 @@ class request implements I_request{
     }
 
     public function exit_application(){
-        _exit("goodbye ");
+        $this->_exit("goodbye ");
     }
 
     //************ private *************//

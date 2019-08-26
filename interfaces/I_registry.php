@@ -2,7 +2,7 @@
 
 //all registry requirements integrated into an interface to ensure security in the root directory
 
-interface registry{
+interface I_registry{
 
     public static function create_registry();//creates the registry based on the root directory's existing files
     //this is a convenience function for developers to avoid handwriting the "registry" text file

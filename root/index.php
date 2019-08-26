@@ -5,20 +5,19 @@ set_error_reporting();
 require_once("../interfaces/I_request.php");
 require_once("../interfaces/I_registry.php");
 require_once("../classes/request.php");
-require_once("../classes/registry.php");
+require_once("../classes/regedit.php");
 
 $request = new request();
 //this is a request to this website
 $request->write_php_ini();
 $request->write_htaccess();
 $request->filter_request();
-$request->application_root();//includes registry details
 
-$register = new registry();//everything in the root needs to be in the registry
-$register->clean_root();
+//everything in the root needs to be in the registry
+regedit::clean_root();
 
 //back to the request
-$request->application_root();
+$request->application_root();//includes registry details
 $request->start_application();
 $request->exit_application();
 

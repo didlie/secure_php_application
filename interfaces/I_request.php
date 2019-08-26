@@ -2,7 +2,7 @@
 
 //this handles php handling of every request, call to the server
 
-interface request{
+interface I_request{
 
     public function write_php_ini();//recreate the php.ini file
 

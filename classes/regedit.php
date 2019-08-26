@@ -3,7 +3,7 @@
 //registry::clean_root();//instantiate on include, can point to upper directory
 //registry::create_registry();//instantiate on install, can point to upper directory
 
-class registry implements I_registry
+class regedit implements I_registry
 {
 	private static $dir_create_array = [];//for directory creation
 	private static $registry = "registry";
@@ -85,6 +85,7 @@ class registry implements I_registry
 		}///////////////////////////////////////////////////////////////////
 		private static function _get_registry(){
 			if(!is_file(self::$registry))
+					// print_r("current directory: " . getcwd()); exit();
 					die("No registry exists, or registry must be in this directory.");
 			self::$reg_array = file(self::$registry,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 			if(empty(self::$reg_array)) die("Registry is empty, error!");
