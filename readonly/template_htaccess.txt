@@ -1,0 +1,27 @@
+# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
+RewriteBase /
+
+Options -Indexes
+
+RewriteEngine on
+
+#uncomment on deployment
+#RewriteCond %{HTTPS} !=on [NC]
+#RewriteRule ^(.*)$ https://didlie.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?didlie.com [NC]
+#RewriteRule \.(jpg|jpeg|png|gif|~)$ - [NC,F,L]
+
+#rewrite xml to php
+RewriteBase /
+RewriteRule ^(.*)\.exe $1 [F]
+
+RewriteRule ^(.*)\/tmp $1 [L,NS]
+RewriteRule ^(.*)\/temp $1 [L,NS]
+RewriteRule ^(.*)\.xml $1.php [NS]
+RewriteRule ^(.*)\.html $1.php [NS]
+RewriteRule ^(.*)\.asp $1.php [NS]
+RewriteRule ^(.*)\.net $1.php [NS]
+
+#redirect on match

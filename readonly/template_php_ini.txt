@@ -1,0 +1,16 @@
+always_populate_raw_post_data = -1
+safe_mode = Off
+post_max_size = 1M
+magic_quotes_gpc = OFF
+session.auto_start = 0
+cache_limiter = private
+default_charset = utf-8
+disable_functions = 0
+display_startup_errors = 0
+display_errors = 0
+file_uploads = 0
+file_downloads = 0
+com.autoregister_casesensitive = 0
+case-sensitivity = 0
+magic_quotes_gpc = Off
+date.timezone="Asia/Jerusalem"
