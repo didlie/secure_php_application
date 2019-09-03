@@ -1,3 +1,10 @@
+***********************
+******* didlie ********
+(c) Isaac Jacobs - 2013
+***********************
+****** Lic. MIT *******
+***********************
+
 # Secure PHP Application, a framework.
 
 1) Fork this as a template
