@@ -10,7 +10,8 @@
 
 5) This function in the 'request' class must be hard coded with all allowed GET and POST keys and allowed types and other restrictions you want to make on data sent from client to server.
 
-`    public function filter_request(){
+```
+public function filter_request(){
         //filter SUPERGLOBALS
         //$GLOBALS
         //$_SERVER
@@ -22,12 +23,12 @@
         //$_COOKIE
         //$_SESSION
     }
-    `
+```
   6) This function in the ./root/index.php must be edited when your app is deployed on a public server.
   
-  `
+```
   function set_error_reporting(){
     error_reporting(E_ALL);//comment out after deployment
     ini_set('display_errors', 1);//comment out after deployment
 }
-`
+```
