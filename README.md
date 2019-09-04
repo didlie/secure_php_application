@@ -42,4 +42,4 @@ public function filter_request(){
 }
 ```
 
-### This template works by handling every request to the server, rewriting .htaccess and php.ini on every instance of a request, filtering all Superglobals sent from the client, validating all files in the website root by referencing the ./root/registry to see what files you want to be there, and finally ends the php script execution (after your app code was executed) redundently to stop the multiple-request crawler attack.
+### This template works by handling every request to the server, rewriting .htaccess and php.ini on every instance of a request, filtering all Superglobals sent from the client, validating all files in the website root by referencing the ./root/registry to see what files you want to be there, and finally ends the php script execution (after your app code was executed) redundently to resist auto crawler load testing.
